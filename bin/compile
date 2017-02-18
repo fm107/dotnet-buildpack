@@ -20,7 +20,7 @@ export_env_dir ${ENV_DIR}
 
 : ${CORE_VERSION:="latest"}
 : ${CORE_SCRIPT_LOCATION:="https://raw.githubusercontent.com/dotnet/cli/rel/1.0.0/scripts/obtain/dotnet-install.sh"}
-: ${NODE_VERSION:="7.5.0"}
+: ${NODE_VERSION:="6.9.5"}
 : ${CORE_VERSION:="latest"}
 : ${CORE_CHANNEL:="preview"}
 
