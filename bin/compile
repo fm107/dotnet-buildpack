@@ -20,7 +20,7 @@ export_env_dir ${ENV_DIR}
 
 : ${CORE_VERSION:="latest"}
 : ${CORE_SCRIPT_LOCATION:="https://raw.githubusercontent.com/dotnet/cli/rel/1.0.0/scripts/obtain/dotnet-install.sh"}
-: ${NODE_VERSION:="6.9.5"}
+: ${NODE_VERSION:="7.5.0"}
 : ${CORE_VERSION:="latest"}
 : ${CORE_CHANNEL:="preview"}
 
@@ -47,7 +47,7 @@ if [[ -n $(find ${SRC_DIR} -type f -iname package.json -o -iname bower.json) ]]
 then
 	echo "Installing Node"
 	NODE_PATH=`mktemp -d`
-	curl https://nodejs.org/dist/v${NODE_VERSION}/node-v${NODE_VERSION}-linux-x64.tar.gz -Ls \
+	curl https://nodejs.org/dist/v${NODE_VERSION}/node-v${NODE_VERSION}-linux-x64.tar.xz -Ls \
 		| tar xz -C ${NODE_PATH}
 	export PATH="${NODE_PATH}/node-v${NODE_VERSION}-linux-x64/bin:${PATH}"
 	echo "Installing bower"
