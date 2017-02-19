@@ -160,8 +160,6 @@ echo "Publish Successed"
 mkdir -p ${BUILD_DIR}/.profile.d
 cp -n ${BUILDPACK_DIR}/.profile.d/* ${BUILD_DIR}/.profile.d/
 
-cp ${NODE_PATH}/node-v${NODE_VERSION}-linux-x64/bin/node $HOME/heroku_output/
-
 if [ -e ${SRC_DIR}/Procfile ]; then
 	cp ${SRC_DIR}/Procfile ${BUILD_DIR}
 else
