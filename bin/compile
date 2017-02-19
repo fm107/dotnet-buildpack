@@ -52,6 +52,7 @@ then
 
 ls -la ${NODE_PATH}
 ln -sv ${NODE_PATH}/node-v${NODE_VERSION}-linux-x64/bin/node /app
+ln -sv ${NODE_PATH}/node-v${NODE_VERSION}-linux-x64/bin/npm /app
 
 export PATH="/app:${PATH}"
 
