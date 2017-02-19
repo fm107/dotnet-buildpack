@@ -51,7 +51,7 @@ then
 	tar -xf node-v${NODE_VERSION}-linux-x64.tar.xz -C ${NODE_PATH}
 
 ls -la ${NODE_PATH}
-ln -sv ${NODE_PATH}/node-v${NODE_VERSION}-linux-x64/bin /app
+ln -sv ${NODE_PATH}/node-v${NODE_VERSION}-linux-x64/ /app
 
 export PATH="/app/node:${PATH}"
 
