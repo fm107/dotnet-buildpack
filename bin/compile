@@ -46,11 +46,16 @@ mkdir -p ${CACHE_DIR}
 if [[ -n $(find ${SRC_DIR} -type f -iname package.json -o -iname bower.json) ]]
 then
 	echo "Installing Node"
-	mkdir -p ${HOME}/node	
-	NODE_PATH=${HOME}/node
+	mkdir -p ${BUILD_DIR}/node	
+	NODE_PATH=${BUILD_DIR}/node
 	wget https://nodejs.org/dist/v${NODE_VERSION}/node-v${NODE_VERSION}-linux-x64.tar.xz
 	tar -xf node-v${NODE_VERSION}-linux-x64.tar.xz -C ${NODE_PATH}
-	export PATH="${NODE_PATH}/node-v${NODE_VERSION}-linux-x64/bin:${PATH}"
+
+ln -s ${NODE_PATH}/node-v${NODE_VERSION}-linux-x64/bin/node /app
+
+export PATH="/app/node:${PATH}"
+
+
 	echo $PATH >> ~/.profile
 	
 	echo -n "Installing bower"
