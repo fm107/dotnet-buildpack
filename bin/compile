@@ -50,13 +50,14 @@ then
 	wget https://nodejs.org/dist/v${NODE_VERSION}/node-v${NODE_VERSION}-linux-x64.tar.xz
 	tar -xf node-v${NODE_VERSION}-linux-x64.tar.xz -C ${NODE_PATH}
 
-ls -la ${NODE_PATH}
 ln -sv ${NODE_PATH}/node-v${NODE_VERSION}-linux-x64/bin/node /app
 ln -sv ${NODE_PATH}/node-v${NODE_VERSION}-linux-x64/bin/npm /app
 
 export PATH="/app:${PATH}"
 
+apt_install nodejs npm
 
+echo $PATH
 	echo $PATH >> ~/.profile
 	
 	echo -n "Installing bower"
