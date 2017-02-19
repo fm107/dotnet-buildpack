@@ -45,9 +45,8 @@ mkdir -p ${CACHE_DIR}
 # TODO: Maybe just run `npm install -g` and if anything is missing, install it after
 if [[ -n $(find ${SRC_DIR} -type f -iname package.json -o -iname bower.json) ]]
 then
-	echo "Installing Node"
-	mkdir -p ${BUILD_DIR}/node	
-	NODE_PATH=${BUILD_DIR}/node
+	echo "Installing Node"	
+	NODE_PATH=${BUILD_DIR}
 	wget https://nodejs.org/dist/v${NODE_VERSION}/node-v${NODE_VERSION}-linux-x64.tar.xz
 	tar -xf node-v${NODE_VERSION}-linux-x64.tar.xz -C ${NODE_PATH}
 
