@@ -51,9 +51,9 @@ then
 apt_install nodejs npm
 
 nodejs -v
-node -v
-
 whereis nodejs
+
+node -v
 whereis node
 
 echo $PATH
