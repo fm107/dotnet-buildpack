@@ -48,8 +48,13 @@ then
 	echo "Installing Node"	
 
 
-apt_install update
 apt_install nodejs npm
+
+nodejs -v
+node -v
+
+whereis nodejs
+whereis node
 
 echo $PATH
 	echo $PATH >> ~/.profile
