@@ -46,7 +46,7 @@ mkdir -p ${CACHE_DIR}
 if [[ -n $(find ${SRC_DIR} -type f -iname package.json -o -iname bower.json) ]]
 then
 	echo "Installing Node"
-	node -v
+
 	
 	
 	echo "Installing bower"
