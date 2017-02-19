@@ -46,20 +46,13 @@ mkdir -p ${CACHE_DIR}
 if [[ -n $(find ${SRC_DIR} -type f -iname package.json -o -iname bower.json) ]]
 then
 	echo "Installing Node"	
-
-	mkdir -p ${HOME}/node	
-	NODE_PATH=${HOME}/node
+	
+	NODE_PATH=/tmp/
 	wget https://nodejs.org/dist/v${NODE_VERSION}/node-v${NODE_VERSION}-linux-x64.tar.xz
 	tar -xf node-v${NODE_VERSION}-linux-x64.tar.xz -C ${NODE_PATH}
 	export PATH="${NODE_PATH}/node-v${NODE_VERSION}-linux-x64/bin:${PATH}"
 	echo $PATH >> ~/.profile
 
-export PATH="$HOME/heroku_output/ClientApp/node/bin:${PATH}"
-
-
-echo $PATH
-node -v
-npm -v
 	
 	echo -n "Installing bower"
 	if ! hash bower 2>/dev/null; then
@@ -159,6 +152,8 @@ echo "Publish Successed"
 
 mkdir -p ${BUILD_DIR}/.profile.d
 cp -n ${BUILDPACK_DIR}/.profile.d/* ${BUILD_DIR}/.profile.d/
+
+cp ${NODE_PATH}/node-v${NODE_VERSION}-linux-x64/bin/node ${BUILD_DIR}/heroku_output
 
 if [ -e ${SRC_DIR}/Procfile ]; then
 	cp ${SRC_DIR}/Procfile ${BUILD_DIR}
