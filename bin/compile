@@ -50,11 +50,7 @@ then
 
 apt_install nodejs npm
 
-nodejs -v
-whereis nodejs
-
-node -v
-whereis node
+ln -s nodejs node
 
 echo $PATH
 	echo $PATH >> ~/.profile
