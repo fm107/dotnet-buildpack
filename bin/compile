@@ -102,7 +102,6 @@ fi
 
 echo "Installing the dependencies"
 apt_install libunwind8 gettext
-apt_install ffmpeg
 
 mkdir -p ${BUILD_DIR}/dotnet
 
