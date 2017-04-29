@@ -145,8 +145,7 @@ dotnet restore ${SRC_DIR}
 export PATH="${PROJECT_DIR}/node_modules/.bin:${PATH}"
 
 echo "Publishing the app"
-echo "${PROJECT_JSON_FILE}"
-echo ${PROJECT_JSON_FILE}
+
 # Publish to heroku_output
 dotnet publish ${PROJECT_JSON_FILE} --output ${BUILD_DIR}/heroku_output --configuration ${CORE_CONFIGURATION} & echo ""
 
