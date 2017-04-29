@@ -147,7 +147,7 @@ export PATH="${PROJECT_DIR}/node_modules/.bin:${PATH}"
 echo "Publishing the app"
 
 # Publish to heroku_output
-dotnet publish ${PROJECT_JSON_FILE} --output ${BUILD_DIR}/heroku_output --configuration ${CORE_CONFIGURATION} & echo ""
+dotnet publish ${PROJECT_JSON_FILE} --output ${BUILD_DIR}/heroku_output --configuration ${CORE_CONFIGURATION}
 
 echo "Publish Successed"
 
